@@ -1,6 +1,6 @@
 // Funzione primo esercizio
 function palindroma(parola) {
-var reversedText  = parola.split('').reverse().join('');
+var reversedText  = parola.toLowerCase().split('').reverse().join('');
 
 if (parolaUtente === reversedText) {
   var parolaPalindroma = "La parola inserita è palindroma";
@@ -20,13 +20,18 @@ function numeroComputer(min, max) {
 }
 
 function somma(numeroUtente, random) {
-  console.log(numeroUtente + random);
-  if (numeroSommato% 2 == 0) {
+  var risultatoSomma = (numeroUtente + random);
+  console.log(risultatoSomma);
+  if (risultatoSomma % 2 == 0) {
     console.log("Il numero è pari");
+    return pari
   } else {
     console.log("Il numero è dispari");
+    return dispari
   }
 }
+
+
 
 
 // Codice primo esercizio
@@ -38,7 +43,7 @@ palindroma(parolaUtente)
 
     // Chiedo dati ad utente
 
-    var pariDispari = prompt("Scrivi p per pari e d per dispari:");
+    var pariDispari = prompt("Scrivi p se scegli pari o d se scegli dispari:");
     var numeroUtente = parseInt(prompt("Inserisci un numero da 1 a 5"));
     console.log(numeroUtente);
 
@@ -49,3 +54,17 @@ palindroma(parolaUtente)
 
     // Effettuo somma fra numero utente e numero del pc e stabilisco se pari o dispari
     var numeroSommato = somma(numeroUtente, random)
+
+    // Stabilisco vincitore
+
+    var pari = risultatoSomma % 2 == 0
+    var dispari = risultatoSomma % 2 != 0
+    var risultatoSomma = (numeroUtente + random);
+
+    if ((risultatoSomma % 2 == 0) && (pariDispari == "p")) {
+     console.log("L'utente ha vinto!");
+   } else if (((risultatoSomma % 2 != 0) && (pariDispari == "d"))) {
+     console.log("L'utente ha vinto!");
+   } else {
+     console.log("Il computer ha vinto!");
+   }
