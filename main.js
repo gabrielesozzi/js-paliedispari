@@ -1,8 +1,9 @@
 // Funzione primo esercizio
 function palindroma(parola) {
-var reversedText  = parola.toLowerCase().split('').reverse().join('');
+var minuscolo = parola.toLowerCase();
+var reversedText = minuscolo.split('').reverse().join('');
 
-if (parolaUtente === reversedText) {
+if (minuscolo === reversedText) {
   var parolaPalindroma = "La parola inserita è palindroma";
   console.log(parolaPalindroma);
   document.getElementById("stampa").innerHTML = parolaPalindroma;
